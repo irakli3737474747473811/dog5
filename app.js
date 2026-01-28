@@ -1,128 +1,54 @@
-// ---------------------- ErrorBoundary ----------------------
-class ErrorBoundary extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false, error: null };
-  }
-
-  static getDerivedStateFromError(error) {
-    return { hasError: true, error };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    console.error('ErrorBoundary caught an error:', error, errorInfo.componentStack);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-          <div className="text-center bg-white p-8 rounded-3xl shadow-lg w-full max-w-sm">
-            <div className="icon-triangle-alert text-4xl text-amber-500 mx-auto mb-4"></div>
-            <h1 className="text-xl font-bold text-gray-900 mb-2">Oops!</h1>
-            <p className="text-gray-600 mb-6 text-sm">Something went wrong showing Buddy's profile.</p>
-            <button
-              onClick={() => window.location.reload()}
-              className="btn-primary"
-            >
-              Reload Page
-            </button>
-          </div>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
-
-// ---------------------- Components ----------------------
+// ---------------------- Header ----------------------
 function Header() {
   return (
-    <header className="bg-[var(--primary-color)] text-white p-4 text-center font-bold text-xl rounded-b-3xl">
-      Buddy's Profile
-    </header>
+    <div className="relative h-96 w-full">
+      <img
+        src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&q=80&w=800"
+        alt="Buddy the Golden Retriever"
+        className="w-full h-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/60"></div>
+
+      {/* NFC Badge */}
+      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full flex items-center gap-2 shadow-lg border border-white/50">
+        <div className="icon-wifi text-blue-500 text-sm"></div>
+        <span className="text-xs font-bold text-gray-800 tracking-wide">NFC ACTIVE</span>
+      </div>
+
+      {/* Bottom Overlay Text */}
+      <div className="absolute bottom-10 left-4 text-white">
+        <h1 className="text-4xl font-extrabold tracking-tight mb-1 drop-shadow-md">Buddy</h1>
+        <p className="text-white/90 font-medium drop-shadow-sm flex items-center gap-1">
+          <span className="icon-map-pin w-4 h-4"></span> San Francisco, CA
+        </p>
+      </div>
+    </div>
   );
 }
 
+// ---------------------- PetInfo ----------------------
 function PetInfo() {
   return (
-    <div className="card">
-      <h2 className="section-title">Pet Info</h2>
-      <p>Name: Buddy</p>
-      <p>Age: 3 years</p>
-      <p>Breed: Golden Retriever</p>
+    <div className="p-4 m-4 bg-white rounded-2xl shadow-md w-full max-w-md">
+      <h2 className="text-lg font-bold mb-2">Pet Info</h2>
+      <p>🐕 Golden Retriever</p>
+      <p>🎂 3 Years Old</p>
+      <p>♂️ Male</p>
+      <p>Personality: Extremely friendly, loves belly rubs, very gentle with kids.</p>
     </div>
-  );
-}
-
-function Emergency() {
-  return (
-    <div className="card">
-      <h2 className="section-title">Emergency</h2>
-      <p>Vet: Dr. Smith</p>
-      <p>Phone: +123456789</p>
-    </div>
-  );
-}
-
-function Contact() {
-  return (
-    <div className="card">
-      <h2 className="section-title">Contact</h2>
-      <p>Owner: John Doe</p>
-      <p>Email: john@example.com</p>
-    </div>
-  );
-}
-
-function Health() {
-  return (
-    <div className="card">
-      <h2 className="section-title">Health</h2>
-      <p>Vaccinated: Yes</p>
-      <p>Allergies: None</p>
-    </div>
-  );
-}
-
-function Gallery() {
-  return (
-    <div className="card">
-      <h2 className="section-title">Gallery</h2>
-      <img src="https://via.placeholder.com/300x200" alt="Buddy" className="rounded-xl" />
-    </div>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="text-center text-gray-500 p-4 text-sm">
-      &copy; 2026 Buddy Profile
-    </footer>
   );
 }
 
 // ---------------------- App ----------------------
 function App() {
   return (
-    <div className="min-h-screen pb-safe mx-auto max-w-md bg-gray-50 shadow-2xl overflow-hidden min-w-[320px]" data-name="app" data-file="app.js">
+    <div className="flex flex-col items-center min-h-screen bg-gray-50">
       <Header />
-      <div className="px-4 -mt-6 relative z-10 pb-12 space-y-4">
-        <PetInfo />
-        <Emergency />
-        <Contact />
-        <Health />
-        <Gallery />
-        <Footer />
-      </div>
+      <PetInfo />
     </div>
   );
 }
 
 // ---------------------- Render ----------------------
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <ErrorBoundary>
-    <App />
-  </ErrorBoundary>
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
