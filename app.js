@@ -47,10 +47,10 @@ function Emergency() {
         <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center animate-pulse">
           <div className="icon-siren text-red-500 text-lg"></div>
         </div>
-        <h2 className="font-bold text-red-800 text-lg">If I am lost...</h2>
+        <h2 className="font-bold text-red-800 text-lg">თუ დაკარგული ვარ...</h2>
       </div>
       <p className="text-red-700 text-sm leading-relaxed">
-        Please help me get back home! I might be scared but I am friendly. My owner misses me very much. 🐾❤️
+        გთხოვთ დამეხმაროთ სახლში დაბრუნებაში! შეიძლება შეშინებული ვარ, მაგრამ მეგობრული ვარ. ჩემი პატრონი ძალიან მენატრება. 🐾❤️
       </p>
     </div>
   );
