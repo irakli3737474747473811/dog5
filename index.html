@@ -1,77 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    <meta name="robots" content="noindex, nofollow">
-    
-    <title>Pet Profile - Buddy</title>
-    <meta name="description" content="Digital Pet Profile & Emergency Contact Info">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Pet Profile - Buddy</title>
+  <meta name="description" content="Digital Pet Profile & Emergency Contact Info">
 
-    <!-- React + ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <!-- React + ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
 
-    <style>
+  <style>
     @layer theme {
-        :root {
-            --primary-color: #F59E0B;
-            --primary-light: #FEF3C7;
-            --secondary-color: #10B981;
-            --bg-color: #FAFAFA;
-            --card-bg: #FFFFFF;
-            --text-main: #1F2937;
-            --text-muted: #6B7280;
-        }
+      :root {
+        --primary-color: #F59E0B;
+        --primary-light: #FEF3C7;
+        --secondary-color: #10B981;
+        --bg-color: #FAFAFA;
+        --card-bg: #FFFFFF;
+        --text-main: #1F2937;
+        --text-muted: #6B7280;
+      }
     }
     @layer base {
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        }
+      body {
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
     }
     @layer components {
-        .btn-primary {
-            @apply w-full bg-[var(--primary-color)] text-white font-bold py-3 px-6 rounded-2xl shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2;
-        }
-        .btn-secondary {
-            @apply w-full bg-white text-[var(--text-main)] border-2 border-gray-100 font-bold py-3 px-6 rounded-2xl shadow-sm active:bg-gray-50 active:scale-95 transition-all flex items-center justify-center gap-2;
-        }
-        .card {
-            @apply bg-[var(--card-bg)] rounded-3xl p-6 shadow-sm border border-gray-100 mb-4;
-        }
-        .info-pill {
-            @apply bg-gray-50 px-4 py-2 rounded-xl text-sm font-medium text-gray-700 border border-gray-100;
-        }
-        .section-title {
-            @apply text-lg font-bold mb-4 flex items-center gap-2 text-gray-800;
-        }
+      .btn-primary {
+        @apply w-full bg-[var(--primary-color)] text-white font-bold py-3 px-6 rounded-2xl shadow-lg active:scale-95 transition-transform flex items-center justify-center gap-2;
+      }
+      .card {
+        @apply bg-[var(--card-bg)] rounded-3xl p-6 shadow-sm border border-gray-100 mb-4;
+      }
+      .section-title {
+        @apply text-lg font-bold mb-4 flex items-center gap-2 text-gray-800;
+      }
     }
-    @layer utilities {
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    }
-    </style>
+  </style>
 </head>
 <body>
-    <div id="root"></div>
+  <div id="root"></div>
 
-    <!-- Components -->
-    <script type="text/javascript" src="components/Header.js"></script>
-    <script type="text/javascript" src="components/PetInfo.js"></script>
-    <script type="text/javascript" src="components/Emergency.js"></script>
-    <script type="text/javascript" src="components/Contact.js"></script>
-    <script type="text/javascript" src="components/Health.js"></script>
-    <script type="text/javascript" src="components/Gallery.js"></script>
-    <script type="text/javascript" src="components/Footer.js"></script>
-
-    <!-- App -->
-    <script type="text/javascript" src="app.js"></script>
+  <!-- App JS -->
+  <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
