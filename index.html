@@ -5,24 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pet Profile - Buddy</title>
 
+  <!-- Privacy -->
+  <meta name="robots" content="noindex, nofollow">
+
   <!-- React -->
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 
-  <!-- Babel (to compile JSX in browser) -->
+  <!-- Babel for JSX -->
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Lucide icons -->
+  <!-- Lucide Icons -->
   <link href="https://unpkg.com/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
 
+  <style>
+    /* Optional: hide horizontal scrollbar in Gallery */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
 </head>
 <body class="bg-gray-50">
+  <!-- Root element for React -->
   <div id="root"></div>
 
-  <!-- Your JS -->
+  <!-- App script -->
   <script type="text/babel" src="app.js"></script>
 </body>
 </html>
